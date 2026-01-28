@@ -18,10 +18,12 @@ router.get(
         { id: (req as any).user._id },
         process.env.JWT_SECRET!,
       );
-      res.redirect(`http://localhost:5173/success?token=${token}`);
+      res.redirect(`https://baroque-works.netlify.app/success?token=${token}`);
     } catch (error) {
       console.error("Google login error", error);
-      res.redirect("http://localhost:5173/login?error=Google_login_error");
+      res.redirect(
+        "https://baroque-works.netlify.app/login?error=Google_login_error",
+      );
     }
   },
 );
